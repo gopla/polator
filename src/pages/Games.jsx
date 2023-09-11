@@ -25,7 +25,7 @@ const Games = () => {
       spacing={2}
     >
       <Stack sx={{
-        height: '100vh',
+        height: '100%',
       }}>
         {pageType === 'leaderboard' && <LeaderboardScreen />}
         {pageType === 'score' && <ScoreScreen />}
@@ -35,8 +35,8 @@ const Games = () => {
         sx={{
           bottom: 0,
           width: '100%',
-          height: '10vh',
-          borderRadius: 2,
+          height: '20vh',
+          borderRadius: 5,
           border: '2px solid var(--red-color)',
           justifyContent: 'center',
         }}

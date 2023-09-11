@@ -26,7 +26,7 @@ const EndGame = () => {
 
     set(newTeam_ref, {
       teamId,
-      date: format(new Date(), 'dd-MM-yyyy'),
+      date: format(new Date(), 'dd-MM-yyyy HH:mm:ss'),
       round: 1,
       isFinisihed: false,
       players: team?.players?.map((player) => ({
@@ -48,7 +48,7 @@ const EndGame = () => {
 
     set(newTeam_ref, {
       teamId,
-      date: format(new Date(), 'dd-MM-yyyy'),
+      date: format(new Date(), 'dd-MM-yyyy HH:mm:ss'),
       round: 1,
       isFinisihed: false,
     })
@@ -67,10 +67,19 @@ const EndGame = () => {
     navigate(`/history`)
   }
 
+  const handleExit = () => {
+    update(team_ref, {
+      ...team,
+      endPlayer,
+    })
+
+    navigate(`/`)
+  }
+
   return (
     <Stack
       p={3}
-      gap={7}
+      gap={5}
       sx={{
         alignItems: 'center',
         height: '100vh',
@@ -129,7 +138,14 @@ const EndGame = () => {
         <StyledButtonAlt handleEvent={handleNewGame}>New Game</StyledButtonAlt>
       </Stack>
 
-      <StyledButtonAlt handleEvent={handleHistory}>History</StyledButtonAlt>
+      <Stack direction={'row'}
+        sx={{
+          width: '100%',
+          gap: 3,
+        }}>
+        <StyledButtonAlt handleEvent={handleHistory}>History</StyledButtonAlt>
+        <StyledButton handleEvent={handleExit}>Exit</StyledButton>
+      </Stack>
     </Stack>
   )
 }

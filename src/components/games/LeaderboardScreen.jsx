@@ -66,7 +66,7 @@ const LeaderboardScreen = () => {
 
       <Stack
         sx={{
-          height: '70vh',
+          height: '65vh',
           overflowY: 'scroll',
         }}
         spacing={3}

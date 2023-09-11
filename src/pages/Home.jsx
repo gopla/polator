@@ -19,7 +19,7 @@ const Home = () => {
     localStorage.setItem('teamId', teamId)
     set(team_ref, {
       teamId,
-      date: format(new Date(), 'dd-MM-yyyy'),
+      date: format(new Date(), 'dd-MM-yyyy HH:mm:ss'),
       round: 1,
       isFinisihed: false,
     })
