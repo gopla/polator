@@ -59,6 +59,11 @@ const EndGame = () => {
   }
 
   const handleHistory = () => {
+    update(team_ref, {
+      ...team,
+      endPlayer,
+    })
+
     navigate(`/history`)
   }
 

@@ -97,14 +97,14 @@ const HistoryCard = ({ game, handleClick }) => {
           fontWeight: 700,
         }}
       >
-        {game.date}
+        {game?.date}
       </Typography>
 
       <Typography variant="p">
-        {game.endPlayer.playerName} / {game.endPlayer.score} pts
+        {game?.endPlayer?.playerName} / {game?.endPlayer?.score} pts
       </Typography>
 
-      <Typography variant="p">{game.round} rounds</Typography>
+      <Typography variant="p">{game?.round} rounds</Typography>
     </Stack>
   )
 }
