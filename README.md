@@ -1,2 +1,3 @@
-# polator
+# Polator
+
 Poker Calculator
