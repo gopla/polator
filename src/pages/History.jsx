@@ -20,6 +20,7 @@ const History = () => {
   const [gamesData, setGamesData] = useState(
     Object.values(games).filter((game) => game.isFinisihed === true),
   )
+  const orderByDateGamesData = gamesData.sort((a, b) => new Date(b.date) - new Date(a.date))
   const [historyData, setHistoryData] = useState([])
 
   const [pageType, setPageType] = useState('list')
@@ -60,8 +61,8 @@ const History = () => {
           }}
           spacing={3}
         >
-          {gamesData.length > 0 &&
-            gamesData.map((game, index) => (
+          {orderByDateGamesData.length > 0 &&
+            orderByDateGamesData.map((game, index) => (
               <HistoryCard key={index} game={game} handleClick={handleToHistoryDetail} />
             ))}
         </Stack>
