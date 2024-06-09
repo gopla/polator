@@ -1,18 +1,15 @@
-import { Leaderboard, Score, Scoreboard } from '@mui/icons-material'
+import { Leaderboard, Score, Scoreboard, Casino } from '@mui/icons-material'
 import { Stack, Typography } from '@mui/material'
 import { useState } from 'react'
 import LeaderboardScreen from '../components/games/LeaderboardScreen'
 import ScoreScreen from '../components/games/ScoreScreen'
+import JokerSelector from '../components/games/JokerSelector'
 
 const Games = () => {
-  const [pageType, setPageType] = useState('leaderboard')
+  const [pageType, setPageType] = useState('leaderboard') // leaderboard, score, joker
 
-  const handleChangePageType = () => {
-    if (pageType === 'leaderboard') {
-      setPageType('score')
-    } else {
-      setPageType('leaderboard')
-    }
+  const handleChangePageType = (page) => {
+    setPageType(page)
   }
 
   return (
@@ -31,6 +28,7 @@ const Games = () => {
       >
         {pageType === 'leaderboard' && <LeaderboardScreen />}
         {pageType === 'score' && <ScoreScreen />}
+        {pageType === 'joker' && <JokerSelector />}
       </Stack>
 
       <Stack
@@ -47,7 +45,8 @@ const Games = () => {
           direction={'row'}
           sx={{
             width: '100%',
-            justifyContent: 'space-around'
+            display: 'grid',
+            gridTemplateColumns: '1fr 1fr 1fr',
           }}
         >
           <Stack
@@ -55,7 +54,7 @@ const Games = () => {
               alignItems: 'center',
               cursor: 'pointer'
             }}
-            onClick={handleChangePageType}
+            onClick={() => handleChangePageType('leaderboard')}
           >
             <Leaderboard
               sx={{
@@ -85,7 +84,7 @@ const Games = () => {
               alignItems: 'center',
               cursor: 'pointer'
             }}
-            onClick={handleChangePageType}
+            onClick={() => handleChangePageType('score')}
           >
             <Scoreboard
               sx={{
@@ -108,7 +107,42 @@ const Games = () => {
             >
               Score
             </Typography>
+
+            
           </Stack>
+
+          <Stack
+            sx={{
+              alignItems: 'center',
+              cursor: 'pointer'
+            }}
+            onClick={() => handleChangePageType('joker')}
+          >
+            <Casino
+              sx={{
+                color:
+                  pageType === 'joker'
+                    ? 'var(--red-color)'
+                    : 'var(--black-color)'
+              }}
+            />
+
+
+            <Typography
+              variant="p"
+              sx={{
+                fontSize: 12,
+                color:
+                  pageType === 'joker'
+                    ? 'var(--red-color)'
+                    : 'var(--black-color)'
+              }}
+            >
+              Joker
+            </Typography>
+
+          </Stack>
+
         </Stack>
       </Stack>
     </Stack>
