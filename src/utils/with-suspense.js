@@ -22,12 +22,12 @@ let suspense_fetch = ({ cache, key, executeFn, argument }) => {
         let result = await executeFn(argument)
         cache.set(key, {
           $fullfilled: result,
-          listeners: cache.get(key).listeners,
+          listeners: cache.get(key).listeners
         })
       } catch (error) {
         cache.set(key, {
           $rejected: error,
-          listeners: cache.get(key).listeners,
+          listeners: cache.get(key).listeners
         })
       } finally {
         // TODO Enable this when it actually helps
@@ -37,7 +37,7 @@ let suspense_fetch = ({ cache, key, executeFn, argument }) => {
         //   }
         // }, 10 * 1000);
       }
-    })(),
+    })()
   })
 }
 
@@ -79,7 +79,7 @@ export let withSuspense = (keyMapFn, executeFn, cache = new Map()) => {
         cache: cache,
         key: key,
         executeFn: executeFn,
-        argument: argument,
+        argument: argument
       })
     }
     let connection = cache.get(key)
@@ -87,12 +87,12 @@ export let withSuspense = (keyMapFn, executeFn, cache = new Map()) => {
     React.useEffect(() => {
       cache.set(key, {
         ...cache.get(key),
-        listeners: cache.get(key).listeners + 1,
+        listeners: cache.get(key).listeners + 1
       })
       return () => {
         cache.set(key, {
           ...cache.get(key),
-          listeners: cache.get(key).listeners - 1,
+          listeners: cache.get(key).listeners - 1
         })
       }
     }, [key])
@@ -116,10 +116,10 @@ export let withSuspense = (keyMapFn, executeFn, cache = new Map()) => {
         listeners:
           cache.get(key) == null || cache.get(key).listeners == null
             ? []
-            : cache.get(key).listeners,
+            : cache.get(key).listeners
       })
       suspense_events.emit('refetch', key)
-    },
+    }
   })
 
   // @ts-ignore

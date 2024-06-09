@@ -1,7 +1,6 @@
-import { Button } from "@mui/material"
+import { Button } from '@mui/material'
 
 const StyledButton = ({ handleEvent, children }) => {
-
   return (
     <Button
       variant="contained"
@@ -12,8 +11,8 @@ const StyledButton = ({ handleEvent, children }) => {
         '&:hover': {
           backgroundColor: 'var(--black-color)',
           color: 'white',
-          boxShadow: 'none',
-        },
+          boxShadow: 'none'
+        }
       }}
     >
       {children}

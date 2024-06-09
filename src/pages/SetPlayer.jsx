@@ -17,9 +17,9 @@ const SetPlayer = () => {
       {
         id: uuid(),
         playerName: '',
-        score: 0,
-      },
-    ],
+        score: 0
+      }
+    ]
   })
 
   const handleAddPlayer = () => {
@@ -31,9 +31,9 @@ const SetPlayer = () => {
         {
           id: uuid(),
           playerName: '',
-          score: 0,
-        },
-      ],
+          score: 0
+        }
+      ]
     })
   }
 
@@ -41,7 +41,7 @@ const SetPlayer = () => {
     setPlayerCount(playerCount - 1)
     setFormData({
       ...formData,
-      players: formData.players.filter((player) => player.id !== id),
+      players: formData.players.filter((player) => player.id !== id)
     })
   }
 
@@ -52,11 +52,11 @@ const SetPlayer = () => {
         if (player.id === id) {
           return {
             ...player,
-            playerName: e.target.value,
+            playerName: e.target.value
           }
         }
         return player
-      }),
+      })
     })
   }
 
@@ -65,17 +65,17 @@ const SetPlayer = () => {
       Swal.fire({
         icon: 'error',
         title: 'Oops...',
-        text: 'Please add at least 2 players',
+        text: 'Please add at least 2 players'
       })
       return
     }
 
-    formData?.players?.map(player => {
+    formData?.players?.map((player) => {
       if (player.playerName === '') {
         Swal.fire({
           icon: 'error',
           title: 'Oops...',
-          text: 'Please fill all player name',
+          text: 'Please fill all player name'
         })
         return
       }
@@ -83,7 +83,7 @@ const SetPlayer = () => {
 
     update(team_ref, {
       ...team,
-      players: formData.players,
+      players: formData.players
     })
 
     navigate(`/${team.teamId}/play`)
@@ -94,7 +94,7 @@ const SetPlayer = () => {
       px={3}
       gap={7}
       sx={{
-        height: '80vh',
+        height: '80vh'
       }}
     >
       <Whitespace height={30} />
@@ -104,7 +104,7 @@ const SetPlayer = () => {
 
       <Stack
         sx={{
-          height: '80vh',
+          height: '80vh'
         }}
       >
         {formData?.players?.map((player, index) => (
@@ -113,14 +113,14 @@ const SetPlayer = () => {
             direction={'row'}
             sx={{
               alignItems: 'center',
-              gap: 2,
+              gap: 2
             }}
           >
             <Typography
               variant="p"
               sx={{
                 fontWeight: 700,
-                marginRight: index === 0 ? 1.5 : 1,
+                marginRight: index === 0 ? 1.5 : 1
               }}
             >
               {index + 1}
@@ -138,7 +138,7 @@ const SetPlayer = () => {
             <RemoveCircle
               sx={{
                 color: 'var(--black-color)',
-                cursor: 'pointer',
+                cursor: 'pointer'
               }}
               onClick={() => handleRemovePlayer(player.id)}
             />
@@ -149,7 +149,7 @@ const SetPlayer = () => {
           mt={3}
           sx={{
             width: '100%',
-            alignItems: 'center',
+            alignItems: 'center'
           }}
         >
           <AddRounded
@@ -157,7 +157,7 @@ const SetPlayer = () => {
               backgroundColor: 'var(--red-color)',
               color: 'var(--white-color)',
               cursor: 'pointer',
-              borderRadius: '20%',
+              borderRadius: '20%'
             }}
             onClick={handleAddPlayer}
           />
@@ -168,7 +168,7 @@ const SetPlayer = () => {
       <Stack
         sx={{
           width: '100%',
-          gap: 2,
+          gap: 2
         }}
       >
         <StyledButton handleEvent={handleNext}>Next</StyledButton>

@@ -14,7 +14,7 @@ const ScoreChangerModal = ({ open, handleClose, player, type }) => {
       return Swal.fire({
         icon: 'error',
         title: 'Oops...',
-        text: 'Score cannot be empty!',
+        text: 'Score cannot be empty!'
       })
     }
 
@@ -27,11 +27,11 @@ const ScoreChangerModal = ({ open, handleClose, player, type }) => {
             score:
               type === 'add'
                 ? _player.score + parseInt(score)
-                : _player.score - parseInt(score),
+                : _player.score - parseInt(score)
           }
         }
         return _player
-      }),
+      })
     })
 
     setScore('')

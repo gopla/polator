@@ -7,7 +7,7 @@ import {
   TableContainer,
   TableHead,
   TableRow,
-  Typography,
+  Typography
 } from '@mui/material'
 import { useOutletContext } from 'react-router-dom'
 import Whitespace from '../common/Whitespace'
@@ -38,7 +38,7 @@ const ScoreScreen = () => {
       <Stack
         sx={{
           height: '65vh',
-          overflowY: 'scroll',
+          overflowY: 'scroll'
         }}
         spacing={3}
       >
@@ -47,11 +47,13 @@ const ScoreScreen = () => {
             <TableHead>
               <TableRow>
                 {team?.scores &&
-                  team?.scores[team?.scores?.length - 1]?.players?.map((player, index) => (
-                    <TableCell key={index} align="center">
-                      {player.playerName}
-                    </TableCell>
-                  ))}
+                  team?.scores[team?.scores?.length - 1]?.players?.map(
+                    (player, index) => (
+                      <TableCell key={index} align="center">
+                        {player.playerName}
+                      </TableCell>
+                    )
+                  )}
               </TableRow>
             </TableHead>
             <TableBody>
@@ -61,7 +63,10 @@ const ScoreScreen = () => {
                     {score.players.map((player, _index) => {
                       const accumulatedScore = scoreData
                         .slice(0, index + 1)
-                        .reduce((acc, round) => acc + round.players[_index].score, 0)
+                        .reduce(
+                          (acc, round) => acc + round.players[_index].score,
+                          0
+                        )
 
                       return (
                         <TableCell key={_index} align="center">
@@ -70,14 +75,19 @@ const ScoreScreen = () => {
                             sx={{
                               alignItems: 'center',
                               justifyContent: 'center',
-                              gap: 1,
+                              gap: 1
                             }}
                           >
-                            <Typography variant="p">{accumulatedScore}</Typography>
+                            <Typography variant="p">
+                              {accumulatedScore}
+                            </Typography>
                             <Typography
                               variant="p"
                               sx={{
-                                color: player.score > 0 ? 'var(--green-color)' : 'var(--red-color)',
+                                color:
+                                  player.score > 0
+                                    ? 'var(--green-color)'
+                                    : 'var(--red-color)'
                               }}
                             >
                               ({player.score > 0 ? '+' : ''}

@@ -9,7 +9,7 @@ const SuspenseFallback = () => {
         height: '100%',
         display: 'flex',
         justifyContent: 'center',
-        alignItems: 'center',
+        alignItems: 'center'
       }}
       spacing={2}
       direction="row"

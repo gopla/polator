@@ -34,7 +34,7 @@ const LeaderCard = ({ player }) => {
           alignItems: 'center',
           backgroundColor: 'var(--red-color)',
           color: 'var(--white-color)',
-          padding: 3,
+          padding: 3
         }}
         direction={'row'}
         spacing={2}
@@ -43,7 +43,7 @@ const LeaderCard = ({ player }) => {
           variant="p"
           className="text-header"
           sx={{
-            color: 'var(--white-color)',
+            color: 'var(--white-color)'
           }}
         >
           #1
@@ -53,14 +53,14 @@ const LeaderCard = ({ player }) => {
         </Avatar>
         <Stack
           sx={{
-            width: '100%',
+            width: '100%'
           }}
         >
           <Typography variant="p">{player.playerName}</Typography>
           <Typography
             variant="p"
             sx={{
-              fontWeight: 700,
+              fontWeight: 700
             }}
           >
             {player.score}
@@ -69,7 +69,7 @@ const LeaderCard = ({ player }) => {
         <EmojiEvents
           sx={{
             color: 'var(--button-color)',
-            fontSize: 50,
+            fontSize: 50
           }}
         />
       </Stack>
@@ -78,13 +78,13 @@ const LeaderCard = ({ player }) => {
         sx={{
           justifyContent: 'space-around',
           border: '2px solid var(--red-color)',
-          display: isButtonShowed ? 'flex' : 'none',
+          display: isButtonShowed ? 'flex' : 'none'
         }}
       >
         <Add
           sx={{
             color: 'var(--green-color)',
-            cursor: 'pointer',
+            cursor: 'pointer'
           }}
           onClick={handleAddScore}
         />
@@ -92,7 +92,7 @@ const LeaderCard = ({ player }) => {
         <Remove
           sx={{
             color: 'var(--red-color)',
-            cursor: 'pointer',
+            cursor: 'pointer'
           }}
           onClick={handleSubstractScore}
         />

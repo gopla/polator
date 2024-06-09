@@ -14,7 +14,7 @@ const LeaderboardScreen = () => {
   const team_ref = ref(database, `games/${teamId}`)
   const team = useFirebase(team_ref)
 
-  const initialPlayers = team?.players || [];
+  const initialPlayers = team?.players || []
 
   const navigate = useNavigate()
   const [leaderboardData, setLeaderboardData] = useState([...initialPlayers])
@@ -46,7 +46,7 @@ const LeaderboardScreen = () => {
     if (isFinisihed) {
       update(team_ref, {
         isFinisihed: true,
-        endCondition,
+        endCondition
       })
 
       navigate(`/${teamId}/end`)
@@ -67,7 +67,7 @@ const LeaderboardScreen = () => {
       <Stack
         sx={{
           height: '65vh',
-          overflowY: 'scroll',
+          overflowY: 'scroll'
         }}
         spacing={3}
       >

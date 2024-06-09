@@ -28,7 +28,7 @@ const App = () => {
           sx={{
             height: '100vh',
             marginTop: 0,
-            position: 'relative',
+            position: 'relative'
           }}
         >
           {!isFullscreen ? (
@@ -40,7 +40,7 @@ const App = () => {
                 cursor: 'pointer',
                 fontSize: '5vh',
                 margin: 1,
-                color: 'var(--red-color)',
+                color: 'var(--red-color)'
               }}
               onClick={handleFullscreen}
             />
@@ -52,7 +52,7 @@ const App = () => {
                 zIndex: 1000,
                 cursor: 'pointer',
                 fontSize: '5vh',
-                color: 'var(--red-color)',
+                color: 'var(--red-color)'
               }}
               onClick={handleExitFullscreen}
             />
@@ -65,7 +65,7 @@ const App = () => {
                 <Route path="play" element={<Games />} />
                 <Route path="end" element={<EndGame />} />
               </Route>
-              <Route path='history' element={<History />} />
+              <Route path="history" element={<History />} />
             </Route>
           </Routes>
         </Stack>

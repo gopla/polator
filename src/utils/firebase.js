@@ -14,7 +14,7 @@ const firebaseConfig = {
   storageBucket: `${import.meta.env.VITE_STORAGEBUCKET}`,
   messagingSenderId: `${import.meta.env.VITE_MESSAGINGSENDERID}`,
   appId: `${import.meta.env.VITE_APPID}`,
-  measurementId: `${import.meta.env.VITE_MEASUREMENTID}`,
+  measurementId: `${import.meta.env.VITE_MEASUREMENTID}`
 }
 
 // Initialize Firebase
@@ -38,17 +38,17 @@ let useFirebaseFirstValue = withSuspense(
   (/** @type {import("firebase/database").Query} */ path) => {
     // return get(path).then((x) => x.val());
     return new Promise((yell) => {
-      let unsub = () => { }
+      let unsub = () => {}
       unsub = onValue(path, (snapshot) => {
         unsub()
         yell(snapshot.val())
       })
     })
-  },
+  }
 )
 
 export let useFirebase = (
-	/** @type {import("firebase/database").Query} */ path,
+  /** @type {import("firebase/database").Query} */ path
 ) => {
   let value = useFirebaseFirstValue(path)
 

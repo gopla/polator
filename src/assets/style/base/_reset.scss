@@ -1,435 +1,435 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap');
 
 html {
-	--background-color: #ffffff;
-	--text-color: #000000;
-	--text-color-secondary: #8e2f8d;
-	--instruction-color: #07b1d3;
-	// --game-color: #0f264a;
-	--red-color: #db354d;
-	--blue-color: #00536e;
-	--game-color: #000000;
-	--black-color: #1e2128;
-	--color-dark: #101010;
-	--color-dark2: #043b4d;
-	--button-color: #f0e646;
-	--green-color: #4caf50;
-	--cursive-font: NeueRegular, sans-serif;
-	--main-color: #8e2f8d;
-	--dev-button-color: rgb(227, 119, 0);
-	--accent-color: var(--button-color);
-	--white-color: #ffffff;
-	--black-color: #000000;
-	--brown-color: #b1966f;
-	--darkBrown-color: #674e3b;
-	--darkerBrown-color: #2b1700;
-	--slightlyDarkBrown-color: #a1846e;
-	--lightBrown-color: #d0bea4;
+  --background-color: #ffffff;
+  --text-color: #000000;
+  --text-color-secondary: #8e2f8d;
+  --instruction-color: #07b1d3;
+  // --game-color: #0f264a;
+  --red-color: #db354d;
+  --blue-color: #00536e;
+  --game-color: #000000;
+  --black-color: #1e2128;
+  --color-dark: #101010;
+  --color-dark2: #043b4d;
+  --button-color: #f0e646;
+  --green-color: #4caf50;
+  --cursive-font: NeueRegular, sans-serif;
+  --main-color: #8e2f8d;
+  --dev-button-color: rgb(227, 119, 0);
+  --accent-color: var(--button-color);
+  --white-color: #ffffff;
+  --black-color: #000000;
+  --brown-color: #b1966f;
+  --darkBrown-color: #674e3b;
+  --darkerBrown-color: #2b1700;
+  --slightlyDarkBrown-color: #a1846e;
+  --lightBrown-color: #d0bea4;
 
-	background-color: var(--background-color);
-	-ms-overflow-style: none;
-	/* Internet Explorer 10+ */
-	scrollbar-width: none;
-	/* Firefox */
+  background-color: var(--background-color);
+  -ms-overflow-style: none;
+  /* Internet Explorer 10+ */
+  scrollbar-width: none;
+  /* Firefox */
 }
 
 ::-webkit-scrollbar {
-	display: none;
+  display: none;
 }
 
 img,
 video {
-	/* width: auto;
+  /* width: auto;
     height: auto; */
-	object-fit: cover;
+  object-fit: cover;
 }
 
 video {
-	background-color: var(--button-color);
+  background-color: var(--button-color);
 }
 
 .cursive {
-	font-family: var(--cursive-font);
-	font-weight: bold;
+  font-family: var(--cursive-font);
+  font-weight: bold;
 }
 
 #root,
 #game-root {
-	background-color: var(--background-color);
-	width: 100vw;
+  background-color: var(--background-color);
+  width: 100vw;
 }
 
 #game-root {
-	background-color: var(--white-color);
+  background-color: var(--white-color);
 }
 
 #root,
 #game-root,
 .height-height {
-	display: flex;
-	flex-direction: column;
-	flex: 1;
-	height: 100%;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  height: 100%;
 }
 
 #ar-root {
-	background-color: var(--black-color);
-	display: flex;
-	flex-direction: column;
-	flex: 1;
-	height: 100%;
+  background-color: var(--black-color);
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  height: 100%;
 }
 
 body {
-	margin: 0;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 
-	font-family: Poppins, sans-serif;
-	height: 100vh;
-	height: calc(100vh - 10vh);
-	height: 100svh;
+  font-family: Poppins, sans-serif;
+  height: 100vh;
+  height: calc(100vh - 10vh);
+  height: 100svh;
 
-	display: flex;
-	flex-direction: column;
-	background-color: var(--background-color);
-	font-size: 16px;
-	user-select: none;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--background-color);
+  font-size: 16px;
+  user-select: none;
 }
 
 .cool-border-thing {
-	--b: 5px;
-	/* thickness of the border */
-	--c: var(--black-color);
-	/* color of the border */
-	--w: 20px;
-	/* width of border */
+  --b: 5px;
+  /* thickness of the border */
+  --c: var(--black-color);
+  /* color of the border */
+  --w: 20px;
+  /* width of border */
 
-	border: var(--b) solid transparent;
-	/* space for the border */
-	--g: #0000 90deg, var(--c) 0;
-	background: conic-gradient(from 90deg at top var(--b) left var(--b), var(--g)) 0
-			0,
-		conic-gradient(from 180deg at top var(--b) right var(--b), var(--g)) 100% 0,
-		conic-gradient(from 0deg at bottom var(--b) left var(--b), var(--g)) 0 100%,
-		conic-gradient(from -90deg at bottom var(--b) right var(--b), var(--g)) 100%
-			100%;
-	background-size: var(--w) var(--w);
-	background-origin: border-box;
-	background-repeat: no-repeat;
+  border: var(--b) solid transparent;
+  /* space for the border */
+  --g: #0000 90deg, var(--c) 0;
+  background:
+    conic-gradient(from 90deg at top var(--b) left var(--b), var(--g)) 0 0,
+    conic-gradient(from 180deg at top var(--b) right var(--b), var(--g)) 100% 0,
+    conic-gradient(from 0deg at bottom var(--b) left var(--b), var(--g)) 0 100%,
+    conic-gradient(from -90deg at bottom var(--b) right var(--b), var(--g)) 100%
+      100%;
+  background-size: var(--w) var(--w);
+  background-origin: border-box;
+  background-repeat: no-repeat;
 }
 
 * {
-	box-sizing: border-box;
-	margin: 0;
-	padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 code {
-	font-family: Poppins, sans-serif;
+  font-family: Poppins, sans-serif;
 }
 
 @media screen and (min-width: 400px) {
-	#game-root {
-		height: 100vh;
-		z-index: 100;
-		overflow: auto;
-		flex: 0 100vh;
-	}
+  #game-root {
+    height: 100vh;
+    z-index: 100;
+    overflow: auto;
+    flex: 0 100vh;
+  }
 }
 
 @media (min-width: 800px) {
-	#game-root {
-		width: 100%;
-		height: 90vh;
-		margin: 0 auto;
-		box-shadow: #00000059 0px 1px 20px;
-		z-index: 100;
-		flex: 0 90vh;
-	}
+  #game-root {
+    width: 100%;
+    height: 90vh;
+    margin: 0 auto;
+    box-shadow: #00000059 0px 1px 20px;
+    z-index: 100;
+    flex: 0 90vh;
+  }
 }
 
 @media screen and (min-width: 900px) {
-	#game-root {
-		width: 400px;
-		height: 90vh;
-		margin: 0 auto;
-		margin-top: 5vh;
-		box-shadow: #00000059 0px 1px 20px;
-		z-index: 100;
-		overflow: auto;
-		border-radius: 20px;
-		//border: solid 20px var(--background-color);
-		flex: 0 90vh;
-	}
+  #game-root {
+    width: 400px;
+    height: 90vh;
+    margin: 0 auto;
+    margin-top: 5vh;
+    box-shadow: #00000059 0px 1px 20px;
+    z-index: 100;
+    overflow: auto;
+    border-radius: 20px;
+    //border: solid 20px var(--background-color);
+    flex: 0 90vh;
+  }
 }
 
 @keyframes slidein {
-	from {
-		transform: translateX(20px);
-	}
+  from {
+    transform: translateX(20px);
+  }
 
-	to {
-		transform: translateX(-20px);
-	}
+  to {
+    transform: translateX(-20px);
+  }
 }
 
 .text-shake {
-	transition: transform 0.2s;
-	animation: slidein 0.1s 4 alternate ease-in-out;
+  transition: transform 0.2s;
+  animation: slidein 0.1s 4 alternate ease-in-out;
 }
 
 @keyframes fade-out {
-	from {
-		opacity: 1;
-	}
+  from {
+    opacity: 1;
+  }
 
-	to {
-		opacity: 0;
-	}
+  to {
+    opacity: 0;
+  }
 }
 
 .text-shake {
-	transition: transform 0.2s;
-	animation-name: slidein;
-	animation: slidein 0.1s 4 alternate ease-in-out;
+  transition: transform 0.2s;
+  animation-name: slidein;
+  animation: slidein 0.1s 4 alternate ease-in-out;
 }
 
 button {
-	background-color: var(--button-color);
-	color: white;
-	border: none;
-	cursor: pointer;
-	transition-property: all;
-	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-	transition-duration: 150ms;
-	border-radius: 20px;
-	padding: 0.5rem 1rem;
-	font-size: 20px;
-	width: 100%;
+  background-color: var(--button-color);
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  border-radius: 20px;
+  padding: 0.5rem 1rem;
+  font-size: 20px;
+  width: 100%;
 }
 
 button.outline {
-	background-color: white;
-	border: solid 1px var(--button-color);
-	color: var(--button-color);
+  background-color: white;
+  border: solid 1px var(--button-color);
+  color: var(--button-color);
 }
 
 button:disabled {
-	filter: grayscale(100%);
-	opacity: 0.5;
+  filter: grayscale(100%);
+  opacity: 0.5;
 }
 
 button:hover:not(:disabled) {
-	filter: brightness(1.1);
+  filter: brightness(1.1);
 }
 
 button:active:not(:disabled) {
-	transform-origin: center;
-	transform: scale(0.95);
+  transform-origin: center;
+  transform: scale(0.95);
 }
 
 button.selected {
-	filter: brightness(2);
+  filter: brightness(2);
 }
 
 .fancy-backdrop {
-	background: transparent;
-	color: white;
+  background: transparent;
+  color: white;
 }
 
 dialog {
-	border: none !important;
+  border: none !important;
 }
 
 dialog[open] {
-	display: flex;
-	width: 100%;
+  display: flex;
+  width: 100%;
 }
 
 dialog::backdrop {
-	backdrop-filter: blur(33px);
-	-webkit-backdrop-filter: blur(33px);
-	background-blend-mode: overlay;
+  backdrop-filter: blur(33px);
+  -webkit-backdrop-filter: blur(33px);
+  background-blend-mode: overlay;
 }
 
 .backdrop {
-	backdrop-filter: blur(33px);
-	-webkit-backdrop-filter: blur(33px);
+  backdrop-filter: blur(33px);
+  -webkit-backdrop-filter: blur(33px);
 }
 
 @keyframes fade-in {
-	from {
-		opacity: 0;
-	}
+  from {
+    opacity: 0;
+  }
 
-	to {
-		opacity: 1;
-	}
+  to {
+    opacity: 1;
+  }
 }
 
 .TrengoWidgetLauncher__iframe {
-	display: none !important;
+  display: none !important;
 }
 
 .swal2-container {
-	z-index: 2000;
+  z-index: 2000;
 }
 
 .btn-black-white {
-	width: 120px;
-	height: 50px;
-	color: #000 !important;
-	background-color: #fff !important;
-	border: 2px solid #000 !important;
+  width: 120px;
+  height: 50px;
+  color: #000 !important;
+  background-color: #fff !important;
+  border: 2px solid #000 !important;
 }
 
 @-webkit-keyframes rotating /* Safari and Chrome */ {
-	from {
-		-webkit-transform: rotate(0deg);
-		-o-transform: rotate(0deg);
-		transform: rotate(0deg);
-	}
-	to {
-		-webkit-transform: rotate(360deg);
-		-o-transform: rotate(360deg);
-		transform: rotate(360deg);
-	}
+  from {
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
 }
 @keyframes rotating {
-	from {
-		-ms-transform: rotate(0deg);
-		-moz-transform: rotate(0deg);
-		-webkit-transform: rotate(0deg);
-		-o-transform: rotate(0deg);
-		transform: rotate(0deg);
-	}
-	to {
-		-ms-transform: rotate(360deg);
-		-moz-transform: rotate(360deg);
-		-webkit-transform: rotate(360deg);
-		-o-transform: rotate(360deg);
-		transform: rotate(360deg);
-	}
+  from {
+    -ms-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -ms-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
 }
 .hologram {
-	-webkit-animation: rotating 4s linear infinite;
-	-moz-animation: rotating 4s linear infinite;
-	-ms-animation: rotating 4s linear infinite;
-	-o-animation: rotating 4s linear infinite;
-	animation: rotating 4s linear infinite;
-	top: 20px;
+  -webkit-animation: rotating 4s linear infinite;
+  -moz-animation: rotating 4s linear infinite;
+  -ms-animation: rotating 4s linear infinite;
+  -o-animation: rotating 4s linear infinite;
+  animation: rotating 4s linear infinite;
+  top: 20px;
 }
 
 .holo-center {
-	display: flex;
-	justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 .lock-icon {
-	color: #c1e5ed;
-	left: 48%;
-	margin-top: 52%;
-	transform: scale(2.5);
+  color: #c1e5ed;
+  left: 48%;
+  margin-top: 52%;
+  transform: scale(2.5);
 }
 
 .topNav {
-	box-shadow: 0px 2px 10px rgba(142, 47, 141, 0.8);
+  box-shadow: 0px 2px 10px rgba(142, 47, 141, 0.8);
 }
 
 .menu {
-	background-color: #2b0423;
-	width: 90%;
-	margin-top: 36px !important;
-	border-radius: 10px !important;
-	color: #fff;
-	transition: all 0.3s ease;
-	position: relative;
-	display: inline-block;
+  background-color: #2b0423;
+  width: 90%;
+  margin-top: 36px !important;
+  border-radius: 10px !important;
+  color: #fff;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
 }
 
 .menu span {
-	padding: 25px !important;
+  padding: 25px !important;
 }
 
 .btn-7 {
-	color: var(--main-color);
-	line-height: 40px;
-	padding: 0;
-	border: none;
+  color: var(--main-color);
+  line-height: 40px;
+  padding: 0;
+  border: none;
 }
 .btn-7 span {
-	position: relative;
-	display: block;
-	width: 100%;
-	height: 100%;
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
 }
 .btn-7:before,
 .btn-7:after {
-	position: absolute;
-	content: '';
-	right: 0;
-	bottom: 0;
-	background: var(--main-color);
-	box-shadow: 0 0 5px var(--main-color);
-	transition: all 0.3s ease;
+  position: absolute;
+  content: '';
+  right: 0;
+  bottom: 0;
+  background: var(--main-color);
+  box-shadow: 0 0 5px var(--main-color);
+  transition: all 0.3s ease;
 }
 .btn-7:before {
-	height: 50%;
-	width: 3px;
+  height: 50%;
+  width: 3px;
 }
 .btn-7:after {
-	width: 20%;
-	height: 3px;
+  width: 20%;
+  height: 3px;
 }
 .btn-7:hover:before {
-	height: 100%;
+  height: 100%;
 }
 .btn-7:hover:after {
-	width: 100%;
+  width: 100%;
 }
 .btn-7 span:before,
 .btn-7 span:after {
-	position: absolute;
-	content: '';
-	left: 0;
-	top: 0;
-	background: var(--main-color);
-	box-shadow: 0 0 5px var(--main-color);
-	transition: all 0.3s ease;
+  position: absolute;
+  content: '';
+  left: 0;
+  top: 0;
+  background: var(--main-color);
+  box-shadow: 0 0 5px var(--main-color);
+  transition: all 0.3s ease;
 }
 .btn-7 span:before {
-	width: 3px;
-	height: 50%;
+  width: 3px;
+  height: 50%;
 }
 .btn-7 span:after {
-	height: 3px;
-	width: 20%;
+  height: 3px;
+  width: 20%;
 }
 .btn-7 span:hover:before {
-	height: 100%;
+  height: 100%;
 }
 .btn-7 span:hover:after {
-	width: 100%;
+  width: 100%;
 }
 .menu-active:before {
-	height: 100%;
+  height: 100%;
 }
 
 .menu-active:after {
-	width: 100%;
+  width: 100%;
 }
 
 .menu-active span:before {
-	height: 100%;
+  height: 100%;
 }
 
 .menu-active span:after {
-	width: 100%;
+  width: 100%;
 }
 
 .info_white_float {
-	position: absolute;
-	right: -50px;
-	top: 5px;
+  position: absolute;
+  right: -50px;
+  top: 5px;
 }

@@ -20,13 +20,15 @@ const Games = () => {
       sx={{
         width: '100%',
         height: '100%',
-        display: 'flex',
+        display: 'flex'
       }}
       spacing={2}
     >
-      <Stack sx={{
-        height: '100%',
-      }}>
+      <Stack
+        sx={{
+          height: '100%'
+        }}
+      >
         {pageType === 'leaderboard' && <LeaderboardScreen />}
         {pageType === 'score' && <ScoreScreen />}
       </Stack>
@@ -38,26 +40,29 @@ const Games = () => {
           height: '20vh',
           borderRadius: 5,
           border: '2px solid var(--red-color)',
-          justifyContent: 'center',
+          justifyContent: 'center'
         }}
       >
         <Stack
           direction={'row'}
           sx={{
             width: '100%',
-            justifyContent: 'space-around',
+            justifyContent: 'space-around'
           }}
         >
           <Stack
             sx={{
               alignItems: 'center',
-              cursor: 'pointer',
+              cursor: 'pointer'
             }}
             onClick={handleChangePageType}
           >
             <Leaderboard
               sx={{
-                color: pageType === 'leaderboard' ? 'var(--red-color)' : 'var(--black-color)',
+                color:
+                  pageType === 'leaderboard'
+                    ? 'var(--red-color)'
+                    : 'var(--black-color)'
               }}
             />
 
@@ -65,7 +70,10 @@ const Games = () => {
               variant="p"
               sx={{
                 fontSize: 12,
-                color: pageType === 'leaderboard' ? 'var(--red-color)' : 'var(--black-color)',
+                color:
+                  pageType === 'leaderboard'
+                    ? 'var(--red-color)'
+                    : 'var(--black-color)'
               }}
             >
               Leaderboard
@@ -75,13 +83,16 @@ const Games = () => {
           <Stack
             sx={{
               alignItems: 'center',
-              cursor: 'pointer',
+              cursor: 'pointer'
             }}
             onClick={handleChangePageType}
           >
             <Scoreboard
               sx={{
-                color: pageType === 'score' ? 'var(--red-color)' : 'var(--black-color)',
+                color:
+                  pageType === 'score'
+                    ? 'var(--red-color)'
+                    : 'var(--black-color)'
               }}
             />
 
@@ -89,7 +100,10 @@ const Games = () => {
               variant="p"
               sx={{
                 fontSize: 12,
-                color: pageType === 'score' ? 'var(--red-color)' : 'var(--black-color)',
+                color:
+                  pageType === 'score'
+                    ? 'var(--red-color)'
+                    : 'var(--black-color)'
               }}
             >
               Score

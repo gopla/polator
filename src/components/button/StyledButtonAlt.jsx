@@ -1,7 +1,6 @@
-import { Button } from "@mui/material"
+import { Button } from '@mui/material'
 
 const StyledButtonAlt = ({ handleEvent, children }) => {
-
   return (
     <Button
       variant="outlined"
@@ -13,8 +12,8 @@ const StyledButtonAlt = ({ handleEvent, children }) => {
         '&:hover': {
           borderColor: 'var(--red-color)',
           color: 'var(--red-color)',
-          boxShadow: 'none',
-        },
+          boxShadow: 'none'
+        }
       }}
     >
       {children}

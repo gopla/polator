@@ -24,7 +24,6 @@ const OtherCard = ({ player, rank }) => {
     setIsButtonShowed(false)
   }
 
-
   return (
     <Stack>
       <Stack
@@ -35,7 +34,7 @@ const OtherCard = ({ player, rank }) => {
           alignItems: 'center',
           border: '2px solid var(--black-color)',
           color: 'var(--black-color)',
-          padding: 3,
+          padding: 3
         }}
         direction={'row'}
         spacing={1}
@@ -44,7 +43,7 @@ const OtherCard = ({ player, rank }) => {
           variant="p"
           className="text-header"
           sx={{
-            color: 'var(--black-color)',
+            color: 'var(--black-color)'
           }}
         >
           #{rank}
@@ -52,14 +51,14 @@ const OtherCard = ({ player, rank }) => {
         <Avatar>{player.playerName?.substring(0, 1).toUpperCase()}</Avatar>
         <Stack
           sx={{
-            width: '100%',
+            width: '100%'
           }}
         >
           <Typography variant="p">{player.playerName}</Typography>
           <Typography
             variant="p"
             sx={{
-              fontWeight: 700,
+              fontWeight: 700
             }}
           >
             {player.score}
@@ -73,13 +72,13 @@ const OtherCard = ({ player, rank }) => {
           borderBottom: '2px solid var(--black-color)',
           borderLeft: '2px solid var(--black-color)',
           borderRight: '2px solid var(--black-color)',
-          display: isButtonShowed ? 'flex' : 'none',
+          display: isButtonShowed ? 'flex' : 'none'
         }}
       >
         <Add
           sx={{
             color: 'var(--green-color)',
-            cursor: 'pointer',
+            cursor: 'pointer'
           }}
           onClick={handleAddScore}
         />
@@ -87,7 +86,7 @@ const OtherCard = ({ player, rank }) => {
         <Remove
           sx={{
             color: 'var(--red-color)',
-            cursor: 'pointer',
+            cursor: 'pointer'
           }}
           onClick={handleSubstractScore}
         />

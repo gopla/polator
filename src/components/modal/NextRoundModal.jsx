@@ -21,11 +21,11 @@ const NextRoundModal = ({ open, handleClose }) => {
         if (index === _index) {
           return {
             ...player,
-            score: parseInt(e.target.value),
+            score: parseInt(e.target.value)
           }
         }
         return player
-      }),
+      })
     )
   }
 
@@ -34,39 +34,39 @@ const NextRoundModal = ({ open, handleClose }) => {
       ...team,
       players: team.players.map((teamPlayer) => {
         const correspondingPlayer = players.find(
-          (player) => player.id === teamPlayer.id,
+          (player) => player.id === teamPlayer.id
         )
         if (correspondingPlayer) {
           return {
             ...teamPlayer,
-            score: teamPlayer.score + correspondingPlayer.score,
+            score: teamPlayer.score + correspondingPlayer.score
           }
         }
         return teamPlayer
       }),
       scores: team?.scores
         ? [
-          ...team.scores,
-          {
-            round: team.round,
-            players: players.map((player) => ({
-              playerName: player.playerName,
-              score: player.score,
-              id: player.id,
-            })),
-          },
-        ]
+            ...team.scores,
+            {
+              round: team.round,
+              players: players.map((player) => ({
+                playerName: player.playerName,
+                score: player.score,
+                id: player.id
+              }))
+            }
+          ]
         : [
-          {
-            round: team.round,
-            players: players.map((player) => ({
-              playerName: player.playerName,
-              score: player.score,
-              id: player.id,
-            })),
-          },
-        ],
-      round: team.round + 1,
+            {
+              round: team.round,
+              players: players.map((player) => ({
+                playerName: player.playerName,
+                score: player.score,
+                id: player.id
+              }))
+            }
+          ],
+      round: team.round + 1
     })
 
     handleClose()
