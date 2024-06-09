@@ -21,18 +21,19 @@ const EndGame = () => {
   const handlePlayAgain = () => {
     update(team_ref, {
       ...team,
-      endPlayer,
+      endPlayer
     })
 
     set(newTeam_ref, {
       teamId,
-      date: format(new Date(), 'dd-MM-yyyy HH:mm:ss'),
+      date: format(new Date(), 'dd-MM-yyyy'),
+      time: format(new Date(), 'HH:mm:ss'),
       round: 1,
       isFinisihed: false,
       players: team?.players?.map((player) => ({
         ...player,
-        score: 0,
-      })),
+        score: 0
+      }))
     })
 
     localStorage.setItem('teamId', teamId)
@@ -43,14 +44,15 @@ const EndGame = () => {
   const handleNewGame = () => {
     update(team_ref, {
       ...team,
-      endPlayer,
+      endPlayer
     })
 
     set(newTeam_ref, {
       teamId,
-      date: format(new Date(), 'dd-MM-yyyy HH:mm:ss'),
+      date: format(new Date(), 'dd-MM-yyyy'),
+      time: format(new Date(), 'HH:mm:ss'),
       round: 1,
-      isFinisihed: false,
+      isFinisihed: false
     })
 
     localStorage.setItem('teamId', teamId)
@@ -61,7 +63,7 @@ const EndGame = () => {
   const handleHistory = () => {
     update(team_ref, {
       ...team,
-      endPlayer,
+      endPlayer
     })
 
     navigate(`/history`)
@@ -70,7 +72,7 @@ const EndGame = () => {
   const handleExit = () => {
     update(team_ref, {
       ...team,
-      endPlayer,
+      endPlayer
     })
 
     navigate(`/`)
@@ -82,7 +84,7 @@ const EndGame = () => {
       gap={5}
       sx={{
         alignItems: 'center',
-        height: '100vh',
+        height: '100vh'
       }}
     >
       <Typography variant="p" className="text-header">
@@ -93,7 +95,7 @@ const EndGame = () => {
         sx={{
           alignItems: 'center',
           width: '100%',
-          height: '100%',
+          height: '100%'
         }}
       >
         <Avatar
@@ -101,7 +103,7 @@ const EndGame = () => {
             width: 100,
             height: 100,
             fontSize: 48,
-            marginBottom: 2,
+            marginBottom: 2
           }}
         >
           {endPlayer.playerName?.substring(0, 1).toUpperCase()}
@@ -111,7 +113,7 @@ const EndGame = () => {
           variant="p"
           sx={{
             fontWeight: 700,
-            fontSize: 24,
+            fontSize: 24
           }}
         >
           {endPlayer.playerName}
@@ -121,7 +123,7 @@ const EndGame = () => {
           variant="p"
           sx={{
             fontWeight: 700,
-            fontSize: 48,
+            fontSize: 48
           }}
         >
           {endPlayer.score}
@@ -131,18 +133,20 @@ const EndGame = () => {
       <Stack
         sx={{
           width: '100%',
-          gap: 2,
+          gap: 2
         }}
       >
         <StyledButton handleEvent={handlePlayAgain}>Play Again</StyledButton>
         <StyledButtonAlt handleEvent={handleNewGame}>New Game</StyledButtonAlt>
       </Stack>
 
-      <Stack direction={'row'}
+      <Stack
+        direction={'row'}
         sx={{
           width: '100%',
-          gap: 3,
-        }}>
+          gap: 3
+        }}
+      >
         <StyledButtonAlt handleEvent={handleHistory}>History</StyledButtonAlt>
         <StyledButton handleEvent={handleExit}>Exit</StyledButton>
       </Stack>

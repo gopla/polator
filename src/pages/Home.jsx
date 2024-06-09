@@ -19,9 +19,10 @@ const Home = () => {
     localStorage.setItem('teamId', teamId)
     set(team_ref, {
       teamId,
-      date: format(new Date(), 'dd-MM-yyyy HH:mm:ss'),
+      date: format(new Date(), 'dd-MM-yyyy'),
+      time: format(new Date(), 'HH:mm:ss'),
       round: 1,
-      isFinisihed: false,
+      isFinisihed: false
     })
 
     navigate(`/${teamId}/setPlayer`)
@@ -37,7 +38,7 @@ const Home = () => {
       gap={7}
       sx={{
         alignItems: 'center',
-        height: '80vh',
+        height: '80vh'
       }}
     >
       <Whitespace height={30} />
@@ -52,7 +53,7 @@ const Home = () => {
           width: '100%',
           maxWidth: '500px',
           height: 'auto',
-          objectFit: 'contain',
+          objectFit: 'contain'
         }}
       />
       <Whitespace height={30} />
@@ -60,7 +61,7 @@ const Home = () => {
       <Stack
         sx={{
           width: '100%',
-          gap: 2,
+          gap: 2
         }}
       >
         <StyledButton handleEvent={handleSubmit}>Start</StyledButton>

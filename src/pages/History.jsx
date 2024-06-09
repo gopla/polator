@@ -7,7 +7,7 @@ import {
   TableContainer,
   TableHead,
   TableRow,
-  Typography,
+  Typography
 } from '@mui/material'
 import StyledButtonAlt from '../components/button/StyledButtonAlt'
 import Whitespace from '../components/common/Whitespace'
@@ -18,11 +18,14 @@ const History = () => {
   const [, , games, games_ref] = useOutletContext()
   const navigate = useNavigate()
   const [gamesData, setGamesData] = useState(
-    Object.values(games).filter((game) => game.isFinisihed === true),
+    Object.values(games).filter((game) => game.isFinisihed === true)
   )
-  const orderByDateGamesData = gamesData.sort((a, b) => new Date(b.date) - new Date(a.date))
+  const orderByDateGamesData = gamesData.sort(
+    (a, b) =>
+      new Date(b.date.split('-').reverse().join(',')) -
+      new Date(a.date.split('-').reverse().join(','))
+  )
   const [historyData, setHistoryData] = useState([])
-
   const [pageType, setPageType] = useState('list')
 
   const handleToHistoryDetail = (game) => {
@@ -45,7 +48,7 @@ const History = () => {
       p={3}
       sx={{
         height: '100vh',
-        width: '100%',
+        width: '100%'
       }}
     >
       <Typography variant="p" className="text-header">
@@ -57,13 +60,17 @@ const History = () => {
         <Stack
           sx={{
             height: '70vh',
-            overflowY: 'scroll',
+            overflowY: 'scroll'
           }}
           spacing={3}
         >
           {orderByDateGamesData.length > 0 &&
             orderByDateGamesData.map((game, index) => (
-              <HistoryCard key={index} game={game} handleClick={handleToHistoryDetail} />
+              <HistoryCard
+                key={index}
+                game={game}
+                handleClick={handleToHistoryDetail}
+              />
             ))}
         </Stack>
       )}
@@ -72,7 +79,7 @@ const History = () => {
       <Whitespace height={30} />
       <Stack
         sx={{
-          width: '100%',
+          width: '100%'
         }}
       >
         <StyledButtonAlt handleEvent={handleBack}>Back</StyledButtonAlt>
@@ -88,17 +95,17 @@ const HistoryCard = ({ game, handleClick }) => {
       sx={{
         border: '1px solid var(--black-color)',
         cursor: 'pointer',
-        borderRadius: 2,
+        borderRadius: 2
       }}
       onClick={() => handleClick(game)}
     >
       <Typography
         variant="p"
         sx={{
-          fontWeight: 700,
+          fontWeight: 700
         }}
       >
-        {game?.date}
+        {game?.date} {game?.time}
       </Typography>
 
       <Typography variant="p">
@@ -117,13 +124,13 @@ const HistoryDetail = ({ game }) => {
       sx={{
         border: '1px solid var(--black-color)',
         borderRadius: 2,
-        height: '70vh',
+        height: '70vh'
       }}
     >
       <Typography
         variant="p"
         sx={{
-          fontWeight: 700,
+          fontWeight: 700
         }}
       >
         {game.date}
@@ -142,11 +149,13 @@ const HistoryDetail = ({ game }) => {
           <TableHead>
             <TableRow>
               {game?.scores &&
-                game?.scores[game?.scores?.length - 1]?.players?.map((player, index) => (
-                  <TableCell key={index} align="center">
-                    {player.playerName}
-                  </TableCell>
-                ))}
+                game?.scores[game?.scores?.length - 1]?.players?.map(
+                  (player, index) => (
+                    <TableCell key={index} align="center">
+                      {player.playerName}
+                    </TableCell>
+                  )
+                )}
             </TableRow>
           </TableHead>
           <TableBody>
@@ -156,7 +165,10 @@ const HistoryDetail = ({ game }) => {
                   {score.players.map((player, _index) => {
                     const accumulatedScore = game?.scores
                       .slice(0, index + 1)
-                      .reduce((acc, round) => acc + round.players[_index].score, 0)
+                      .reduce(
+                        (acc, round) => acc + round.players[_index].score,
+                        0
+                      )
 
                     return (
                       <TableCell key={_index} align="center">
@@ -165,14 +177,19 @@ const HistoryDetail = ({ game }) => {
                           sx={{
                             alignItems: 'center',
                             justifyContent: 'center',
-                            gap: 1,
+                            gap: 1
                           }}
                         >
-                          <Typography variant="p">{accumulatedScore}</Typography>
+                          <Typography variant="p">
+                            {accumulatedScore}
+                          </Typography>
                           <Typography
                             variant="p"
                             sx={{
-                              color: player.score > 0 ? 'var(--green-color)' : 'var(--red-color)',
+                              color:
+                                player.score > 0
+                                  ? 'var(--green-color)'
+                                  : 'var(--red-color)'
                             }}
                           >
                             ({player.score > 0 ? '+' : ''}
